@@ -4,7 +4,7 @@ A simple FAQ website about *The Lord of the Rings* that works perfectly in brows
 
 ## What This Is
 
-A static FAQ site with questions and answers about Tolkien's Lord of the Rings. It's designed to be read by customers in browser reader mode for a distraction-free experience.
+An example showing how to create a webpage that renders properly in browser reader mode. Uses Lord of the Rings FAQ content to demonstrate the HTML structure and techniques needed for reader mode compatibility.
 
 ## How to Write HTML for Reader Mode
 
@@ -18,15 +18,22 @@ Reader modes look for specific HTML patterns to extract content properly:
     <h2>Question</h2>
     <p>Answer paragraph...</p>
   </section>
+  <article>      <!-- Standalone content -->
+    <h2>Article Title</h2>
+    <p>Article content...</p>
+    <blockquote>Quote text</blockquote>
+  </article>
 </main>
 ```
 
 ### Essential Elements
 - `<main>` - Contains your primary content
 - `<h1>` - One main title per page
-- `<h2>` - Section headings (questions)
-- `<section>` - Groups each Q&A pair
+- `<h2>` - Section headings (questions/articles)
+- `<section>` - Groups related Q&A content
+- `<article>` - Standalone pieces of content
 - `<p>` - Body text paragraphs
+- `<blockquote>` - Quoted text
 
 ### What Reader Mode Ignores
 - Navigation menus
@@ -35,9 +42,10 @@ Reader modes look for specific HTML patterns to extract content properly:
 - Most CSS styling
 - JavaScript content
 
-### Tips for Better Reader Mode
-1. Use descriptive headings that make sense as questions
-2. Keep paragraphs focused and not too long
-3. Use `<em>` for emphasis instead of `<strong>` or `<b>`
-4. Avoid complex layouts - simple is better
-5. Test in Safari or Firefox reader mode to verify it works
+### Things to Avoid (Will Break Reader Mode)
+1. Using `<div>` instead of semantic elements for main content
+2. Putting important content in JavaScript-generated elements
+3. Using CSS to hide/show content instead of proper HTML structure
+4. Complex nested layouts without clear content hierarchy
+5. Missing or poorly structured heading tags (h1, h2, etc.)
+6. Putting main content inside navigation or sidebar elements
