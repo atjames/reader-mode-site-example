@@ -1,5 +1,7 @@
 # Reader Mode Example - Lord of the Rings FAQ
 
+**Live Demo:** https://reader-mode-example.netlify.app/
+
 A simple FAQ website about *The Lord of the Rings* that works perfectly in browser reader modes.
 
 ## What This Is
